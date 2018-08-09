@@ -3,7 +3,6 @@ package org.brandao.brutos.hibernatemysql.web;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 import javax.validation.Valid;
 
 import org.brandao.brutos.annotation.Action;
@@ -12,7 +11,6 @@ import org.brandao.brutos.annotation.Result;
 import org.brandao.brutos.annotation.Transient;
 import org.brandao.brutos.annotation.View;
 import org.brandao.brutos.annotation.web.RequestMethod;
-import org.brandao.brutos.annotation.web.ResponseErrors;
 import org.brandao.brutos.hibernatemysql.entity.User;
 import org.brandao.brutos.hibernatemysql.registry.UserRegistry;
 import org.brandao.brutos.hibernatemysql.registry.UserRegistryException;
@@ -20,9 +18,7 @@ import org.brandao.brutos.validator.ValidatorException;
 import org.brandao.brutos.web.RequestMethodTypes;
 import org.brandao.brutos.web.WebFlowController;
 
-@Singleton
 @Action(value="/users/add", view=@View("users/userForm"))
-@ResponseErrors(enabled=false)
 public class UserController {
 
 	@Transient
@@ -43,7 +39,7 @@ public class UserController {
 
 	@Action("/users")
 	@RequestMethod(RequestMethodTypes.POST)
-	@ResponseErrors(code=200, view="users/userForm")
+	@View("users/userForm")
 	public void updateUser(
 			@Valid
 			@Basic(bean="user")User user) throws ValidatorException, UserRegistryException{
