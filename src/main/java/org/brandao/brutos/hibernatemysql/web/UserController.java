@@ -8,7 +8,6 @@ import javax.validation.Valid;
 import org.brandao.brutos.annotation.Action;
 import org.brandao.brutos.annotation.Basic;
 import org.brandao.brutos.annotation.Result;
-import org.brandao.brutos.annotation.Transient;
 import org.brandao.brutos.annotation.View;
 import org.brandao.brutos.annotation.web.RequestMethod;
 import org.brandao.brutos.hibernatemysql.entity.User;
@@ -21,7 +20,6 @@ import org.brandao.brutos.web.WebFlowController;
 @Action(value="/users/add", view=@View("users/userForm"))
 public class UserController {
 
-	@Transient
 	@Inject
 	private UserRegistry userRegistry;
 
