@@ -14,7 +14,7 @@ import org.brandao.brutos.hibernatemysql.entity.User;
 import org.brandao.brutos.hibernatemysql.registry.UserRegistry;
 import org.brandao.brutos.hibernatemysql.registry.UserRegistryException;
 import org.brandao.brutos.validator.ValidatorException;
-import org.brandao.brutos.web.RequestMethodTypes;
+import org.brandao.brutos.annotation.web.RequestMethodTypes;
 import org.brandao.brutos.web.WebFlowController;
 
 @Action(value="/users/add", view=@View("users/userForm"))
